@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "app_function": "transform.lambda_handler",
+        "aws_region": "us-east-1",
+        "project_name": "aws-emr",
+        "runtime": "python3.10",
+        "s3_bucket": "zappa-transform-parcial2",
+        "keep_warm": false,
+        "apigateway_enabled": false,
+        "manage_roles": false,
+        "role_name": "LabRole",
+        "events": [
+            {
+                "function": "transform.lambda_handler",
+                "expression": "cron(0 10 * * ? *)"
+            }
+        ]
+    }
+}
